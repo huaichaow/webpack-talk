@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
     output: {
-        filename: 'index.js',
+        filename: 'index-[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     mode: 'development',
@@ -13,7 +14,10 @@ module.exports = {
         hotOnly: true
     },
     plugins:[
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
     ],
     module: {
         rules: [
