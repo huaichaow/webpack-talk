@@ -1,9 +1,10 @@
+import './common.css';
+
 const widget = () => {
     const element = document.createElement("div");
 
     element.innerText = "Hello EPAM!";
-    element.style.fontSize = "120px";
-    element.style.color = "blue";
+    element.className = "widget";
 
     return element;
 }
