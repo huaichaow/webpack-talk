@@ -3,6 +3,7 @@ const widget = () => {
 
     element.innerText = "Hello EPAM!";
     element.style.fontSize = "120px";
+    element.style.color = "blue";
 
     return element;
 }
